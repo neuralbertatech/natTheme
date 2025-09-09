@@ -1,0 +1,10 @@
+
+
+> @sjsf/basic-theme@2.3.0 build /home/auAn/develop/svelte-jsonschema-form/packages/basic-theme
+> svelte-package && publint
+
+[1m[32msrc -> dist[22m[39m
+Running [1mpublint v0.3.12[22m for [1m@sjsf/basic-theme[22m...
+Packing files with `pnpm pack`...
+Linting...
+[1m[32mAll good![39m[22m

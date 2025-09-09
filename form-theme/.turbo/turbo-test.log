@@ -1,0 +1,60 @@
+
+
+> @sjsf/basic-theme@2.3.0 test /home/auAn/develop/svelte-jsonschema-form/packages/basic-theme
+> vitest run --exclude '.svelte-kit/**'
+
+[?25l
+[1m[46m RUN [49m[22m [36mv3.2.4 [39m[90m/home/auAn/develop/svelte-jsonschema-form/packages/basic-theme[39m
+
+[?2026h
+[2m Test Files [22m[1m[32m0 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m[1m[32m0 passed[39m[22m[90m (0)[39m
+[2m   Start at [22m21:06:44
+[2m   Duration [22m866ms
+[?2026l[K[1A[K[1A[K[1A[K[1A[K[1A[K[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Unhandled Errors [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[31m[1m
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Unhandled Error [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[31m[1mError[22m: browserType.launch: Executable doesn't exist at /home/auAn/.cache/ms-playwright/chromium_headless_shell-1169/chrome-linux/headless_shell
+╔═════════════════════════════════════════════════════════════════════════╗
+║ Looks like Playwright Test or Playwright was just installed or updated. ║
+║ Please run the following command to download new browsers:              ║
+║                                                                         ║
+║     pnpm exec playwright install                                        ║
+║                                                                         ║
+║ <3 Playwright Team                                                      ║
+╚═════════════════════════════════════════════════════════════════════════╝[39m
+[90m [2m❯[22m ../../node_modules/.pnpm/@vitest+browser@3.2.4_playwright@1.52.0_vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightn_0291bba044ad0882d6f7148cf65ae4a8/node_modules/@vitest/browser/dist/webdriver-KA1WiV0q.js:[2m80:54[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+
+
+[2m Test Files [22m [90m (3)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m     Errors [22m [1m[31m1 error[39m[22m
+[2m   Start at [22m 21:06:44
+[2m   Duration [22m 3.52s[2m (transform 0ms, setup 0ms, collect 0ms, tests 0ms, environment 0ms, prepare 0ms)[22m
+
+[?25herror during close browserType.launch: Executable doesn't exist at /home/auAn/.cache/ms-playwright/chromium_headless_shell-1169/chrome-linux/headless_shell
+╔═════════════════════════════════════════════════════════════════════════╗
+║ Looks like Playwright Test or Playwright was just installed or updated. ║
+║ Please run the following command to download new browsers:              ║
+║                                                                         ║
+║     pnpm exec playwright install                                        ║
+║                                                                         ║
+║ <3 Playwright Team                                                      ║
+╚═════════════════════════════════════════════════════════════════════════╝
+    at /home/auAn/develop/svelte-jsonschema-form/node_modules/[4m.pnpm[24m/@vitest+browser@3.2.4_playwright@1.52.0_vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightn_0291bba044ad0882d6f7148cf65ae4a8/node_modules/[4m@vitest[24m/browser/dist/webdriver-KA1WiV0q.js:80:54 {
+  name: [32m'Error'[39m,
+  type: [32m'Unhandled Error'[39m,
+  stacks: [
+    {
+      method: [32m''[39m,
+      file: [32m'/home/auAn/develop/svelte-jsonschema-form/node_modules/.pnpm/@vitest+browser@3.2.4_playwright@1.52.0_vite@7.1.4_@types+node@24.3.0_jiti@2.5.1_lightn_0291bba044ad0882d6f7148cf65ae4a8/node_modules/@vitest/browser/dist/webdriver-KA1WiV0q.js'[39m,
+      line: [33m80[39m,
+      column: [33m54[39m
+    }
+  ]
+}
