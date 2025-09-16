@@ -1,0 +1,49 @@
+{
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Form Test File",
+      "autoAttachChildProcesses": true,
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"
+      ],
+      "program": "${workspaceRoot}/packages/form/node_modules/vitest/vitest.mjs",
+      "args": [
+        "run",
+        "${relativeFile}",
+        "-r",
+        "${workspaceRoot}/packages/form/"
+      ],
+      "smartStep": true,
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Form SvelteKit Integration Test File",
+      "autoAttachChildProcesses": true,
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"
+      ],
+      "program": "${workspaceRoot}/packages/sveltekit/node_modules/vitest/vitest.mjs",
+      "args": [
+        "run",
+        "../../${relativeFile}",
+        "-r",
+        "${workspaceRoot}/packages/sveltekit/"
+      ],
+      "env": {
+        "NODE_ENV": "development",
+        "VITE_TEST": "true"
+      },
+      "cwd": "${workspaceRoot}/packages/sveltekit",
+      "smartStep": true,
+      "console": "integratedTerminal"
+    }
+  ]
+}
