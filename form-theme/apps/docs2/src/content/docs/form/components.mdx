@@ -1,0 +1,25 @@
+---
+title: Components
+sidebar:
+  order: 5
+---
+
+import { Code } from '@astrojs/starlight/components'
+
+import basicFromCode from '#/form/src/form/basic-form.svelte?raw'
+
+The `@sjsf/form` package exports several basic ui components for creating forms:
+
+- `Content`
+- `SubmitButton`
+- `Form`
+- `BasicForm`
+- `SimpleForm`
+- `ErrorMessage`
+- `Datalist`
+- `Text`
+- `Field`
+
+Components are linked through the context of the form, example:
+
+<Code code={basicFromCode} lang="svelte" title="basic-form.svelte" />

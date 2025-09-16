@@ -1,0 +1,128 @@
+---
+title: Validation
+sidebar:
+  order: 1
+---
+
+import { Code, Card, LinkCard, Tabs, TabItem } from '@astrojs/starlight/components';
+import { DEFAULT_FIELDS_VALIDATION_DEBOUNCE_MS } from '@sjsf/form';
+
+import FormCard from '@/components/form-card.astro'
+
+import LiveValidation from './live-validation.svelte'
+import liveValidationCode from './live-validation.svelte?raw'
+
+import FieldsValidation from './fields-validation.svelte'
+import fieldsValidationCode from './fields-validation.svelte?raw'
+
+import AsyncValidation from './async-validation.svelte'
+import asyncValidationCode from './async-validation.svelte?raw'
+
+import FocusOnFirsError from './focus-on-first-error.svelte'
+import focusOnFirstErrorCode from './focus-on-first-error.svelte?raw'
+
+import ErrorsList from './errors-list.svelte'
+import errorsListCode from './errors-list.svelte?raw'
+
+By default, form data when submitted will be validated using HTML5 validation and the provided validator.
+
+:::tip
+
+To disable HTML5 validation pass `novalidate` attribute to the form element.
+
+:::
+
+## Live validation (not recommended)
+
+You can easily implement live validation by utilizing Svelte 5 reactivity
+
+<Code code={liveValidationCode} lang="svelte" />
+
+<FormCard>
+  <LiveValidation client:only="svelte" />
+</FormCard>
+
+While it is possible, this approach has low efficiency because
+it is usually not meaningful to validate the entire form when only one field is changed.
+
+## Fields validation
+
+Instead of performing a full form validation every time a field is changed,
+we propose to validate only the field being changed and
+full validation of the form on submission.
+
+:::note
+
+By default, fields validation is performed with a debounce of {DEFAULT_FIELDS_VALIDATION_DEBOUNCE_MS}ms.
+
+This behavior can be changed using the `fieldsValidationDebounceMs` option.
+
+:::
+
+<Code code={fieldsValidationCode} lang="svelte" />
+
+<FormCard>
+  <FieldsValidation client:only="svelte" />
+</FormCard>
+
+The form in the example above, will validate fields on `input` and `change` events.
+
+<LinkCard title="Fields validation mode API reference" href="../../form/fields-validation-mode/" />
+
+## Async validation
+
+The form supports asynchronous validation.
+
+:::note
+
+By default
+
+- a new form validation process can only be started after the previous one is completed;
+- a new fields validation process aborts the previous one;
+- fields validation abort errors are not displayed.
+
+You can change this behavior by passing the `submissionCombinator` and `fieldsValidationCombinator` options.
+
+:::
+
+<Tabs>
+  <TabItem label="Form">
+    <FormCard title='Async form' >
+      <AsyncValidation client:only="svelte" />
+    </FormCard>
+  </TabItem>
+  <TabItem label="form.svelte">
+    <Code code={asyncValidationCode} lang="svelte" />
+  </TabItem>
+</Tabs>
+
+Please see your validator page for more information.
+
+<LinkCard title="Ajv" href="../../validators/ajv/#async-validation" />
+<LinkCard title="Zod" href="../../validators/zod4/#async-validation" />
+<LinkCard title="Valibot" href="../../validators/valibot/#async-validation" />
+<LinkCard title="Standard Schema" href="../../validators/standard-schema/#async-validation" />
+
+## Focus on first error
+
+You can achieve focus on the first error by using the `createFocusOnFirstError` function.
+
+<Code code={focusOnFirstErrorCode} lang="svelte" />
+
+<FormCard>
+  <FocusOnFirsError client:only="svelte" />
+</FormCard>
+
+1. `focusOnFirstError` will try to find a focusable element and focus it.
+2. If it's not found, it will try to find an errors list and scroll it into view.
+3. If it's not found, it will return `false`, so you can extend the behavior.
+
+## Errors list
+
+If necessary, you can create a list of errors
+
+<Code code={errorsListCode} lang="svelte" />
+
+<FormCard>
+  <ErrorsList client:only="svelte" />
+</FormCard>
